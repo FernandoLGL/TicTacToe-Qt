@@ -2,7 +2,6 @@
 #define TICTACTOE_H
 
 #include <QMainWindow>
-#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class TicTacToe; }
@@ -10,26 +9,13 @@ QT_END_NAMESPACE
 
 class TicTacToe : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
-public:
-    enum Player{
-        PLAYER1,
-        PLAYER2
-    };
+ public:
+  TicTacToe(QWidget *parent = nullptr);
+  ~TicTacToe();
 
-    Player player;
-
-public:
-    TicTacToe(QWidget *parent = nullptr);
-    ~TicTacToe();
-
-private slots:
-    void on_pushButton_1_clicked();
-
-private:
-    Ui::TicTacToe *ui;
-    void pressButton(QPushButton& button);
-    void togglePlayer();
+ private:
+  Ui::TicTacToe *ui;
 };
 #endif // TICTACTOE_H

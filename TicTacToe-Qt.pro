@@ -18,13 +18,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 INCLUDEPATH += $$PWD/include
 
 SOURCES += \
+    src/FluxController.cpp \
+    src/Menu.cpp \
     src/main.cpp \
     src/TicTacToe.cpp
 
 HEADERS += \
+    include/FluxController.h \
+    include/Menu.h \
     include/TicTacToe.h
 
 FORMS += \
+    gui/Menu.ui \
     gui/TicTacToe.ui
 
 # Default rules for deployment.
