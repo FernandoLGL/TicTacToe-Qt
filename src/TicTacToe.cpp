@@ -1,4 +1,6 @@
 #include "TicTacToe.h"
+#include "FluxController.h"
+#include "Menu.h"
 #include "ui_TicTacToe.h"
 
 TicTacToe::TicTacToe(QWidget *parent)
@@ -11,4 +13,8 @@ TicTacToe::TicTacToe(QWidget *parent)
 TicTacToe::~TicTacToe()
 {
     delete ui;
+}
+
+void TicTacToe::on_backToMenuButton_clicked() {
+  FluxController::switchScene(this, new Menu);
 }

@@ -15,6 +15,9 @@ class TicTacToe : public QMainWindow
   TicTacToe(QWidget *parent = nullptr);
   ~TicTacToe();
 
+ private slots:
+  void on_backToMenuButton_clicked();
+
  private:
   Ui::TicTacToe *ui;
 };
