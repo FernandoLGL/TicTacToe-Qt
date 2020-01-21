@@ -14,15 +14,29 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="firstPlayerName">
+      <property name="placeholderText">
+       <string>Player 1's name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="secondPlayerName">
+      <property name="placeholderText">
+       <string>Player 2's name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
      <widget class="QPushButton" name="playButton">
       <property name="text">
        <string>Play</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="3" column="0" colspan="2">
      <widget class="QPushButton" name="quitButton">
       <property name="text">
        <string>Quit</string>
