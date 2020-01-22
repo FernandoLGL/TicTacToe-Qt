@@ -1,22 +1,12 @@
 #ifndef TICTACTOE_H
 #define TICTACTOE_H
 
-#include <QMainWindow>
 #include <QString>
 
 class QPushButton;
 
-QT_BEGIN_NAMESPACE
-namespace Ui
+class TicTacToe
 {
-  class TicTacToe;
-}
-QT_END_NAMESPACE
-
-class TicTacToe : public QMainWindow
-{
-  Q_OBJECT
-
   enum Player
   {
     PLAYER1,
@@ -33,10 +23,10 @@ class TicTacToe : public QMainWindow
   }
 
   public:
-  TicTacToe(QString player1Name, QString player2Name, QWidget *parent = nullptr);
+  TicTacToe(QString player1Name, QString player2Name);
   ~TicTacToe();
 
-  private slots:
+  public:
   void on_backToMenuButton_clicked();
 
   void on_firstButton_clicked();
@@ -69,7 +59,6 @@ class TicTacToe : public QMainWindow
   bool draw();
 
   private:
-  Ui::TicTacToe *ui;
   QString m_player1Name;
   QString m_player2Name;
   Player m_turnPlayer;
