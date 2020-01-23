@@ -4,6 +4,7 @@
 #include <QString>
 
 class QPushButton;
+class QWidget;
 
 class TicTacToe
 {
@@ -12,19 +13,6 @@ class TicTacToe
     PLAYER1,
     PLAYER2
   };
-
-  public:
-  QString getTurnPlayer()
-  {
-    if (m_turnPlayer == PLAYER1)
-      return m_player1Name;
-    else
-      return m_player2Name;
-  }
-
-  public:
-  TicTacToe(QString player1Name, QString player2Name);
-  ~TicTacToe();
 
   public:
   void on_backToMenuButton_clicked();
@@ -47,20 +35,33 @@ class TicTacToe
 
   void on_ninethButton_clicked();
 
-  private:
-  void togglePlayer();
-  void play(QPushButton *square);
+  public:
+  static void markPosition(QPushButton *square);
   // There are three win cases
-  bool columnWin();
-  bool diagonalWin();
-  bool rowWin();
-  void disableAllButtons();
-  bool threeButtonComparison(QString first, QString second, QString third);
-  bool draw();
+  static bool columnWin(QList<QPushButton *> board);
+  static bool diagonalWin(QList<QPushButton *> board);
+  static bool rowWin(QList<QPushButton *> board);
+  static bool draw(QList<QPushButton *> board);
+  static void togglePlayer();
+
+  public:
+  static void initializeNames(const QString &player1Name, const QString &player2Name);
+  static QString getPlayer1Name() { return m_player1Name; }
+  static QString getPlayer2Name() { return m_player2Name; }
+  static QString getTurnPlayer()
+  {
+    if (m_turnPlayer == PLAYER1)
+      return m_player1Name;
+    else
+      return m_player2Name;
+  }
 
   private:
-  QString m_player1Name;
-  QString m_player2Name;
-  Player m_turnPlayer;
+  static bool threeButtonComparison(QString first, QString second, QString third);
+
+  private:
+  static QString m_player1Name;
+  static QString m_player2Name;
+  static Player m_turnPlayer;
 };
 #endif  // TICTACTOE_H
