@@ -14,26 +14,8 @@ class TicTacToe
     PLAYER2
   };
 
-  public:
-  void on_backToMenuButton_clicked();
-
-  void on_firstButton_clicked();
-
-  void on_secondButton_clicked();
-
-  void on_thirdButton_clicked();
-
-  void on_fourthButton_clicked();
-
-  void on_fifthButton_clicked();
-
-  void on_sixthButton_clicked();
-
-  void on_seventhButton_clicked();
-
-  void on_eigthButton_clicked();
-
-  void on_ninethButton_clicked();
+public:
+  TicTacToe() = delete;
 
   public:
   static void markPosition(QPushButton *square);

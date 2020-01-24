@@ -19,12 +19,14 @@ INCLUDEPATH += $$PWD/include
 
 SOURCES += \
     src/MainWindow.cpp \
+    src/WindowController.cpp \
     src/main.cpp \
     src/TicTacToe.cpp
 
 HEADERS += \
     include/MainWindow.h \
-    include/TicTacToe.h
+    include/TicTacToe.h \
+    include/WindowController.h
 
 FORMS += \
     gui/MainWindow.ui

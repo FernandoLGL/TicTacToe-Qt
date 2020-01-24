@@ -29,7 +29,7 @@ void MainWindow::on_playButton_clicked()
   TicTacToe::initializeNames(player1Name, player2Name);
   ui->turnAnnouncement->setText(TicTacToe::getTurnPlayer() + "'s turn!");
   // 1 is the game page itself
-  ui->stackedWidget->setCurrentIndex(1);
+  WindowController::switchToPage(this, 1);
   ui->backToMenuButton->show();
 }
 
@@ -90,6 +90,6 @@ void MainWindow::disableAllPlayableButtons()
 
 void MainWindow::on_backToMenuButton_clicked()
 {
-  ui->stackedWidget->setCurrentIndex(0);
+	WindowController::switchToPage(this, 0);
   ui->backToMenuButton->hide();
 }

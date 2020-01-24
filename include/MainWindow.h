@@ -2,6 +2,7 @@
 #define MAIN_WINDOW_H
 
 #include <QMainWindow>
+#include "WindowController.h"
 
 class QPushButton;
 
@@ -49,6 +50,8 @@ class MainWindow : public QMainWindow
 
   private:
   Ui::MainWindow *ui;
+
+  friend void WindowController::switchToPage(MainWindow * window, int pageIndex);
 };
 
 #endif  // APPLICATION_WINDOW_H
