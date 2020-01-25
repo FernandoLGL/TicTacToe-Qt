@@ -7,6 +7,7 @@
 TicTacToe::Player TicTacToe::m_turnPlayer = PLAYER1;
 QString TicTacToe::m_player1Name;
 QString TicTacToe::m_player2Name;
+TicTacToe::Player TicTacToe::m_startingPlayer;
 
 // TODO: Change the Board to a QVariantHash or something like that
 

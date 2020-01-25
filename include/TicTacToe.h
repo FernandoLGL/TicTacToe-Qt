@@ -8,13 +8,14 @@ class QWidget;
 
 class TicTacToe
 {
+  public:
   enum Player
   {
     PLAYER1,
     PLAYER2
   };
 
-public:
+  public:
   TicTacToe() = delete;
 
   public:
@@ -38,6 +39,10 @@ public:
       return m_player2Name;
   }
 
+  public:
+  static void setTurnPlayer(Player player) { m_turnPlayer = player; }
+  static void setStartingPlayer(Player player) { m_startingPlayer = player; }
+
   private:
   static bool threeButtonComparison(QString first, QString second, QString third);
 
@@ -45,5 +50,6 @@ public:
   static QString m_player1Name;
   static QString m_player2Name;
   static Player m_turnPlayer;
+  static Player m_startingPlayer;
 };
 #endif  // TICTACTOE_H

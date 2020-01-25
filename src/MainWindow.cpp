@@ -27,6 +27,8 @@ void MainWindow::on_playButton_clicked()
     player2Name = ui->player2NameWidget->text();
   }
   TicTacToe::initializeNames(player1Name, player2Name);
+  // Setting the turn player to be who the user chose to be
+  checkForStartingPlayer();
   ui->turnAnnouncement->setText(TicTacToe::getTurnPlayer() + "'s turn!");
   // 1 is the game page itself
   WindowController::switchToPage(this, 1);
@@ -55,6 +57,8 @@ void MainWindow::on_ninethButton_clicked() { play(ui->ninethButton); }
 
 void MainWindow::play(QPushButton *button)
 {
+  // If the button has already been played
+  if (!button->text().isNull()) return;
   QList<QPushButton *> playableButtons{ ui->firstButton,   ui->secondButton, ui->thirdButton,
                                         ui->fourthButton,  ui->fifthButton,  ui->sixthButton,
                                         ui->seventhButton, ui->eighthButton, ui->ninethButton };
@@ -88,8 +92,16 @@ void MainWindow::disableAllPlayableButtons()
   }
 }
 
+void MainWindow::checkForStartingPlayer()
+{
+  if (ui->player1First->isChecked())
+    TicTacToe::setTurnPlayer(TicTacToe::PLAYER1);
+  else
+    TicTacToe::setTurnPlayer(TicTacToe::PLAYER2);
+}
+
 void MainWindow::on_backToMenuButton_clicked()
 {
-	WindowController::switchToPage(this, 0);
+  WindowController::switchToPage(this, 0);
   ui->backToMenuButton->hide();
 }

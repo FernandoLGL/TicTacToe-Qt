@@ -2,6 +2,7 @@
 #define MAIN_WINDOW_H
 
 #include <QMainWindow>
+
 #include "WindowController.h"
 
 class QPushButton;
@@ -47,11 +48,12 @@ class MainWindow : public QMainWindow
   private:
   void play(QPushButton *button);
   void disableAllPlayableButtons();
+  void checkForStartingPlayer();
 
   private:
   Ui::MainWindow *ui;
 
-  friend void WindowController::switchToPage(MainWindow * window, int pageIndex);
+  friend class WindowController;
 };
 
 #endif  // APPLICATION_WINDOW_H
