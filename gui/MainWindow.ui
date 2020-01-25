@@ -15,6 +15,20 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="backToMenuButton">
+      <property name="text">
+       <string>Back to Main Menu</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="quitButton">
+      <property name="text">
+       <string>Quit</string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="1">
      <spacer name="horizontalSpacer">
       <property name="orientation">
@@ -28,42 +42,85 @@
       </property>
      </spacer>
     </item>
-    <item row="0" column="2">
-     <widget class="QPushButton" name="quitButton">
-      <property name="text">
-       <string>Quit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QPushButton" name="backToMenuButton">
-      <property name="text">
-       <string>Back to Main Menu</string>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="0" colspan="3">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="menuPage">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
          <widget class="QLineEdit" name="player1NameWidget">
+          <property name="font">
+           <font>
+            <italic>false</italic>
+           </font>
+          </property>
           <property name="placeholderText">
            <string>Player 1</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="2" column="0">
          <widget class="QLineEdit" name="player2NameWidget">
+          <property name="font">
+           <font>
+            <italic>false</italic>
+           </font>
+          </property>
           <property name="placeholderText">
            <string>Player 2</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="1">
+         <widget class="QRadioButton" name="player1First">
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QRadioButton" name="player2First">
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
          <widget class="QPushButton" name="playButton">
           <property name="text">
            <string>Play</string>
@@ -273,7 +330,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
