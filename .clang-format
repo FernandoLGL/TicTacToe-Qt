@@ -2,7 +2,7 @@
 BasedOnStyle: Google
 AccessModifierOffset: '0'
 AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: 'false'
+AlignConsecutiveAssignments: 'true'
 AlignConsecutiveDeclarations: 'false'
 AlignEscapedNewlines: Left
 AlignOperands: 'true'
@@ -26,10 +26,10 @@ BreakBeforeTernaryOperators: 'false'
 BreakConstructorInitializers: AfterColon
 BreakStringLiterals: 'true'
 ColumnLimit: '100'
+ConstructorInitializerAllOnOneLineOrOnePerLine: 'true'
 Cpp11BracedListStyle: 'false'
 Language: Cpp
 NamespaceIndentation: All
-PointerAlignment: Left
 SortIncludes: 'true'
 SortUsingDeclarations: 'false'
 SpaceAfterCStyleCast: 'false'
