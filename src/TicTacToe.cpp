@@ -38,19 +38,19 @@ bool TicTacToe::draw(QList<QPushButton *> board)
 
 bool TicTacToe::rowWin(QList<QPushButton *> board)
 {
-  QString firstButton = board[0]->text();
-  QString secondButton = board[1]->text();
-  QString thirdButton = board[2]->text();
-  QString fourthButton = board[3]->text();
-  QString fifthButton = board[4]->text();
-  QString sixthButton = board[5]->text();
+  QString firstButton   = board[0]->text();
+  QString secondButton  = board[1]->text();
+  QString thirdButton   = board[2]->text();
+  QString fourthButton  = board[3]->text();
+  QString fifthButton   = board[4]->text();
+  QString sixthButton   = board[5]->text();
   QString seventhButton = board[6]->text();
-  QString eigthButton = board[7]->text();
-  QString ninethButton = board[8]->text();
+  QString eigthButton   = board[7]->text();
+  QString ninethButton  = board[8]->text();
 
-  bool firstRowWin = threeButtonComparison(firstButton, secondButton, thirdButton);
+  bool firstRowWin  = threeButtonComparison(firstButton, secondButton, thirdButton);
   bool secondRowWin = threeButtonComparison(fourthButton, fifthButton, sixthButton);
-  bool thirdRowWin = threeButtonComparison(seventhButton, eigthButton, ninethButton);
+  bool thirdRowWin  = threeButtonComparison(seventhButton, eigthButton, ninethButton);
   return firstRowWin || secondRowWin || thirdRowWin;
 }
 
@@ -62,10 +62,10 @@ bool TicTacToe::threeButtonComparison(QString first, QString second, QString thi
 
 bool TicTacToe::diagonalWin(QList<QPushButton *> board)
 {
-  QString firstButton = board[0]->text();
-  QString fifthButton = board[4]->text();
-  QString ninethButton = board[8]->text();
-  QString thirdButton = board[2]->text();
+  QString firstButton   = board[0]->text();
+  QString fifthButton   = board[4]->text();
+  QString ninethButton  = board[8]->text();
+  QString thirdButton   = board[2]->text();
   QString seventhButton = board[6]->text();
 
   bool firstDiagonalWin = threeButtonComparison(firstButton, fifthButton, ninethButton);
@@ -93,19 +93,19 @@ void TicTacToe::markPosition(QPushButton *square)
 
 bool TicTacToe::columnWin(QList<QPushButton *> board)
 {
-  QString firstButton = board[0]->text();
-  QString secondButton = board[1]->text();
-  QString thirdButton = board[2]->text();
-  QString fourthButton = board[3]->text();
-  QString fifthButton = board[4]->text();
-  QString sixthButton = board[5]->text();
+  QString firstButton   = board[0]->text();
+  QString secondButton  = board[1]->text();
+  QString thirdButton   = board[2]->text();
+  QString fourthButton  = board[3]->text();
+  QString fifthButton   = board[4]->text();
+  QString sixthButton   = board[5]->text();
   QString seventhButton = board[6]->text();
-  QString eigthButton = board[7]->text();
-  QString ninethButton = board[8]->text();
+  QString eigthButton   = board[7]->text();
+  QString ninethButton  = board[8]->text();
 
-  bool firstColumnWin = threeButtonComparison(firstButton, fourthButton, seventhButton);
+  bool firstColumnWin  = threeButtonComparison(firstButton, fourthButton, seventhButton);
   bool secondColumnWin = threeButtonComparison(secondButton, fifthButton, eigthButton);
-  bool thirdColumnWin = threeButtonComparison(thirdButton, sixthButton, ninethButton);
+  bool thirdColumnWin  = threeButtonComparison(thirdButton, sixthButton, ninethButton);
 
   return firstColumnWin || secondColumnWin || thirdColumnWin;
 }
